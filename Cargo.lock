@@ -107,9 +107,9 @@ dependencies = [
 
 [[package]]
 name = "jub-jub"
-version = "0.0.12"
+version = "0.0.13"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f3dc3213f5c72c26e4a9bc4b4d1b4c797bb5ea366962f5a5d81bfb9f57ab58ed"
+checksum = "f07ec40dd62080ad429955aaee8023583c51f94e35fbf06ecd7a03405cbe8d21"
 dependencies = [
  "bls-12-381",
  "parity-scale-codec",
@@ -205,7 +205,7 @@ dependencies = [
 
 [[package]]
 name = "red-jubjub"
-version = "0.0.16"
+version = "0.0.17"
 dependencies = [
  "blake2b_simd",
  "bls-12-381",
