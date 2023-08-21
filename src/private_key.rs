@@ -5,7 +5,7 @@ use super::signature::Signature;
 
 use jub_jub::Fp;
 use rand_core::RngCore;
-use zkstd::behave::{SigUtils, FftField};
+use zkstd::behave::{FftField, SigUtils};
 
 #[derive(Clone, Copy, Debug)]
 pub struct SecretKey(pub(crate) Fp);
