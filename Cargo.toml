@@ -5,17 +5,23 @@ authors = [
 ]
 name = "red-jubjub"
 description = 'reddsa signature implementation on jubjub'
-version = "0.0.18"
+version = "0.0.19"
 edition = "2021"
 license = "Apache-2.0"
 homepage = 'https://github.com/KogarashiNetwork/Kogarashi/'
 repository = 'https://github.com/KogarashiNetwork/Kogarashi/'
 readme = 'README.md'
+categories = ["cryptography"]
+keywords = ["zkp", "blockchain", "elliptic-curve"]
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs", "--html-in-header", "katex-header.html"]
 
 [dependencies]
-zkstd = { version = "0.0.11", default-features = false }
-jub-jub = { version = "0.0.13", default-features = false }
-bls-12-381 = { version = "0.0.11", default-features = false }
+zkstd = { version = "0.0.12", default-features = false }
+jub-jub = { version = "0.0.14", default-features = false }
+bls-12-381 = { version = "0.0.12", default-features = false }
 blake2b_simd = { version = "1", default-features = false }
 rand_core = { version="0.6.4", default-features = false }
 

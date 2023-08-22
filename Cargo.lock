@@ -27,9 +27,9 @@ dependencies = [
 
 [[package]]
 name = "bls-12-381"
-version = "0.0.11"
+version = "0.0.12"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7e02ccd01f8323173d420ebef6116fe09f6ecbb1606c71e5cd21250596cdadb3"
+checksum = "9a7566e94a7e3e480f27375ffaf4da3b993927581e71cfd9f55be25e4c89b07f"
 dependencies = [
  "parity-scale-codec",
  "rand_core",
@@ -107,9 +107,9 @@ dependencies = [
 
 [[package]]
 name = "jub-jub"
-version = "0.0.13"
+version = "0.0.14"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f07ec40dd62080ad429955aaee8023583c51f94e35fbf06ecd7a03405cbe8d21"
+checksum = "9594dcd111e9610a2b4f36a9c52ae30c6c02542e69505ecdedb9c4dc26289517"
 dependencies = [
  "bls-12-381",
  "parity-scale-codec",
@@ -205,7 +205,7 @@ dependencies = [
 
 [[package]]
 name = "red-jubjub"
-version = "0.0.17"
+version = "0.0.13"
 dependencies = [
  "blake2b_simd",
  "bls-12-381",
@@ -303,9 +303,9 @@ dependencies = [
 
 [[package]]
 name = "zkstd"
-version = "0.0.11"
+version = "0.0.12"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1c25fc3476b5f1ef18ba75739f6bd85a0219e489019447d4da13f26ae25c653a"
+checksum = "1723ddf295d3f38212b6c94efafedf801fc780781b1f3659b47c3c1fa4f0a7e3"
 dependencies = [
  "parity-scale-codec",
  "paste",
