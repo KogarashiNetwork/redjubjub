@@ -1,5 +1,5 @@
 use bls_12_381::Fr;
-use jub_jub::JubjubAffine;
+use zkstd::common::{FftField, RedDSA, TwistedEdwardsAffine};
 
 pub(crate) const SAPLING_PERSONAL: &[u8; 16] = b"Zcash_RedJubjubH";
 
@@ -17,12 +17,27 @@ const SAPLING_BASE_POINT_Y: Fr = Fr::to_mont_form([
     0x57a1019e6de9b675,
 ]);
 
-pub(crate) const SAPLING_BASE_POINT: JubjubAffine =
-    JubjubAffine::from_raw_unchecked(SAPLING_BASE_POINT_X, SAPLING_BASE_POINT_Y);
-
-pub(crate) const SAPLING_REDJUBJUB_COFACTOR: Fr = Fr::to_mont_form([
+const SAPLING_REDJUBJUB_COFACTOR: Fr = Fr::to_mont_form([
     0x0000000000000008,
     0x0000000000000000,
     0x0000000000000000,
     0x0000000000000000,
 ]);
+
+fn sapling_base_point_x<F: FftField>() -> F {
+    F::from(SAPLING_BASE_POINT_X.inner())
+}
+
+fn sapling_base_point_y<F: FftField>() -> F {
+    F::from(SAPLING_BASE_POINT_Y.inner())
+}
+
+pub fn sapling_base_point<P: RedDSA>() -> P::Affine {
+    let x = sapling_base_point_x();
+    let y = sapling_base_point_y();
+    P::Affine::from_raw_unchecked(x, y)
+}
+
+pub fn sapling_redjubjub_cofactor<F: FftField>() -> F {
+    F::from(SAPLING_REDJUBJUB_COFACTOR.inner())
+}

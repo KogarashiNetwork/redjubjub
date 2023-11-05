@@ -1,7 +1,8 @@
-use zkstd::behave::SigUtils;
+use serde::{Deserialize, Serialize};
+use zkstd::common::SigUtils;
+use zkstd::common::*;
 
-/// RedJubjub signature for message
-#[derive(Clone, Copy, Debug)]
+#[derive(Clone, Copy, Debug, Default, PartialEq, Eq, Serialize, Deserialize, Decode, Encode)]
 pub struct Signature {
     pub(crate) r: [u8; 32],
     pub(crate) s: [u8; 32],
@@ -33,5 +34,13 @@ impl Signature {
         assert_eq!(bytes.len(), Self::LENGTH);
         let bytes: [u8; Self::LENGTH] = bytes[..64].try_into().unwrap();
         Self::from_bytes(bytes)
+    }
+
+    pub fn r(&self) -> [u8; 32] {
+        self.r
+    }
+
+    pub fn s(&self) -> [u8; 32] {
+        self.s
     }
 }
